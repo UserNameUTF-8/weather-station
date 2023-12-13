@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/undraw_weather_re_qsmd"
+                android:contentDescription="@string/hello_man" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/main_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/meduim1"
+
+                android:text="Weather Station" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="wrap_content" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/meduim1"
+                    android:gravity="bottom"
+                    android:text="status"
+                    android:textColor="@color/main_color"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Space
+                    app:layout_constraintLeft_toRightOf="@id/status"
+                    app:layout_constraintTop_toTopOf="@id/status"
+                    app:layout_constraintBottom_toBottomOf="@id/status"
+                    android:layout_width="4dp"
+                    android:id="@+id/spacer"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/img_status"
+                    app:layout_constraintLeft_toRightOf="@id/spacer"
+                    app:layout_constraintBottom_toBottomOf="@id/status"
+                    app:layout_constraintTop_toTopOf="@id/status"
+                    android:layout_gravity="top"
+                    android:src="@drawable/baseline_fiber_manual_record_24_offline"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp" />
+
+                <ImageButton
+                    android:id="@+id/sync"
+                    android:enabled="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_sync_24"
+                    android:backgroundTint="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/line_chart"
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/bar_data_set"
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+
+
+            <LinearLayout
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="8dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/prus" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/id_presure"
+                    android:text="2034dp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
