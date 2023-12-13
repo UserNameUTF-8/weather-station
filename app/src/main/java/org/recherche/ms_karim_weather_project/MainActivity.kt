@@ -100,6 +100,7 @@ class MainActivity : AppCompatActivity() {
         // setup certification
 
         val cf = CertificateFactory.getInstance("X.509")
+        // certification with not existe in the code herarchie but you can setup yours through create a cloud mqtt and get there certifiaction
         val cert = applicationContext.resources?.openRawResource(R.raw.server1)
 
         val ca = cf.generateCertificate(cert)
